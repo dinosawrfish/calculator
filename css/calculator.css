@@ -2,6 +2,11 @@
     box-sizing: border-box;
 }
 
+button {
+    background-color: rgb(219, 215, 215);
+    border-color: rgb(219, 215, 215);
+}
+
 .output {
     grid-area: output;
     background-color: black;
@@ -53,9 +58,4 @@
     grid-template-columns: 3fr 1fr;
     grid-template-rows: 1fr 1fr 4fr;
     background-color: orange;
-}
-
-button {
-    background-color: rgb(219, 215, 215);
-    border-color: rgb(219, 215, 215);
 }
