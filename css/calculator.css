@@ -9,6 +9,9 @@ button {
 
 .output {
     grid-area: output;
+    display: flex;
+    align-items: center;
+    justify-content: right;
     font-family:monospace;
     background-color: black;
     color: white;
