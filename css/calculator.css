@@ -9,6 +9,7 @@ button {
 
 .output {
     grid-area: output;
+    font-family:monospace;
     background-color: black;
     color: white;
 }
