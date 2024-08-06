@@ -34,13 +34,12 @@
     display: grid;
     width: 100%;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    ;
-
+    grid-template-rows: 1fr 1fr 1fr 3fr;
 }
 
 .zero {
-    grid-area: zero;
+    grid-column-start: 1;
+    grid-column-end: 4;
 }
 
 .calculator {
