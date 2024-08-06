@@ -7,8 +7,15 @@ button {
     border-color: rgb(219, 215, 215);
     font-size:x-large;
     font-weight: 550;
-    border-color: black;
-    border-radius: 0%;
+    border: 2px solid black;
+}
+
+button:hover {
+    filter: brightness(1.15);
+}
+
+button:active{
+    filter: brightness(.75);
 }
 
 .output {
@@ -47,6 +54,10 @@ button {
     color: white;
 }
 
+.equal {
+    border-bottom: 0;
+}
+
 .numbers {
     display: grid;
     width: 100%;
@@ -57,6 +68,7 @@ button {
 .zero {
     grid-column-start: 1;
     grid-column-end: 4;
+    border-bottom: 0;
 }
 
 .calculator {
