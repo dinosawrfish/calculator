@@ -45,7 +45,6 @@
 .calculator {
     display: grid;
     width: 100%;
-    height: 250px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     grid-template-areas:
     "output output"
