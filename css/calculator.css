@@ -6,6 +6,9 @@ button {
     background-color: rgb(219, 215, 215);
     border-color: rgb(219, 215, 215);
     font-size:x-large;
+    font-weight: 550;
+    border-color: black;
+    border-radius: 0%;
 }
 
 .output {
