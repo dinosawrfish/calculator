@@ -32,7 +32,10 @@ button {
     display: grid;
     width: 100%;
     grid-area: operands;
-    background-color: aqua;
+}
+
+.operand {
+    background-color: orange;
 }
 
 .numbers {
