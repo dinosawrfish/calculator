@@ -4,6 +4,8 @@
 
 .output {
     grid-area: output;
+    background-color: black;
+    color: white;
 }
 
 .clear {
@@ -14,64 +16,31 @@
     grid-area: backspace;
 }
 
-.divide {
-    grid-area: divide;
+.actions {
+    display: grid;
+    grid-template-areas:
+    "clear backspace";
+    grid-template-columns: 2fr 1fr;
 }
 
-.seven {
-    grid-area: seven;
+.operands {
+    display: grid;
+    width: 100%;
+    grid-area: operands;
+    background-color: aqua;
 }
 
-.eight {
-    grid-area: eight;
-}
+.numbers {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    ;
 
-.nine {
-    grid-area: nine;
-}
-
-.multiply {
-    grid-area: multiply;
-}
-
-.four {
-    grid-area: four;
-}
-
-.five {
-    grid-area: five;
-}
-
-.six {
-    grid-area: six;
-}
-
-.substract {
-    grid-area: substract;
-}
-
-.one {
-    grid-area: one;
-}
-
-.two {
-    grid-area: two;
-}
-
-.three {
-    grid-area: three;
-}
-
-.add {
-    grid-area: add;
 }
 
 .zero {
     grid-area: zero;
-}
-
-.equal {
-    grid-area: equal;
 }
 
 .calculator {
@@ -80,14 +49,11 @@
     height: 250px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     grid-template-areas:
-    "output output output output"
-    "clear clear backspace divide"
-    "seven eight nine multiply"
-    "four five six substract"
-    "one two three add"
-    "zero zero zero equal";
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    "output output"
+    "actions operands"
+    "numbers operands"
+    "zero operands";
+    grid-template-columns: 2fr 1fr;
 }
 
 button {
