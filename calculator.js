@@ -6,7 +6,6 @@ const numbers = document.querySelector(".numbers");
 
 // What does a calculator do
 
-// TODO: output to show number selected
 function selectNumber(output, input) {
     let newNumber = "";
 
@@ -17,7 +16,6 @@ function selectNumber(output, input) {
     }
     return newNumber;
 }
-// TODO: output add number to new decimal place when output not zero
 // TODO: current output needs to follow selected operand with selected number
 
 // listeners
