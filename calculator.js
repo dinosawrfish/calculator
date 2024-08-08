@@ -96,9 +96,10 @@ operands.addEventListener("click", function(event) {
 })
 
 backspace.addEventListener("click", function() {
-    output.innerText = removeRightDigit(output.innerText);
-    num2 = output.innerText;
-    // do not allow backspace if the current operation is an equal
+    if (operation !== tallyUp) {
+        output.innerText = removeRightDigit(output.innerText);
+        num2 = output.innerText;
+    }
 })
 
 clear.addEventListener("click", function() {
