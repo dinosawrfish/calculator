@@ -67,11 +67,14 @@ button:active{
     grid-template-rows: 1fr 1fr 1fr 1fr;
 }
 
+.numbers button:nth-child(3n+1) {
+    border-left: 0;
+}
+
 .zero {
     grid-column-start: 1;
     grid-column-end: 4;
     border-bottom: 0;
-    border-left: 0;
 }
 
 .calculator {
