@@ -7,6 +7,8 @@ let operation = null;
 const output = document.querySelector(".output");
 const numbers = document.querySelector(".numbers");
 const operands = document.querySelector(".operands");
+const backspace = document.querySelector(".backspace");
+const clear = document.querySelector(".clear");
 
 // What does a calculator do
 
@@ -51,6 +53,10 @@ function selectOperation(operand) {
     };
     return operands[operand];
 }
+
+function removeRightDigit(number) {
+    return number.slice(0,-1);
+}
 // TODO: current output needs to follow selected operand with selected number
 
 // listeners
@@ -76,4 +82,8 @@ operands.addEventListener("click", function(event) {
         total = output.innerText;
         output.innerText = 0;
     }
+})
+
+backspace.addEventListener("click", function() {
+    output.innerText = removeRightDigit(output.innerText);
 })
