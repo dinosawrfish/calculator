@@ -52,6 +52,7 @@ button:active{
 .operand {
     background-color: orange;
     color: white;
+    border-right: 0;
 }
 
 .equal {
