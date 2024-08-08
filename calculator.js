@@ -55,18 +55,24 @@ function selectOperation(operand) {
 }
 
 function removeRightDigit(number) {
-    return number.slice(0,-1);
+    if (number.length > 1){
+        return number.slice(0,-1);
+
+    }
+    else {
+        return 0;
+    }
 }
 // TODO: current output needs to follow selected operand with selected number
+
+while (operation !== null) {
+    total = operation(parseInt(total), parseInt(output.innerText));
+    operation = null;
+}
 
 // listeners
 numbers.addEventListener("click", function(event) {
     output.innerText = selectNumber(output.innerText, event.target.innerText);
-
-    if (operation !== null) {
-        answer = operation(parseInt(total), parseInt(output.innerText));
-        total = answer;
-    }
 });
 
 operands.addEventListener("click", function(event) {
