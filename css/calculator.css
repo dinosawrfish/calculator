@@ -3,6 +3,7 @@
 }
 
 button {
+    height: 100px;
     background-color: rgb(219, 215, 215);
     border-color: rgb(219, 215, 215);
     font-size:x-large;
