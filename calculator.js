@@ -60,7 +60,6 @@ function removeRightDigit(number) {
         return 0;
     }
 }
-// TODO: have operations be remembered and ran when equal is clicked
 
 // listeners
 numbers.addEventListener("click", function(event) {
@@ -69,8 +68,6 @@ numbers.addEventListener("click", function(event) {
 });
 
 operands.addEventListener("click", function(event) {
-
-    console.log(event.target.innerText);
     if (operation !== null) {
         if (num1 === null) {
             total = num2;
@@ -79,7 +76,6 @@ operands.addEventListener("click", function(event) {
             total = operation(parseInt(num1), parseInt(num2));
         }
         num2 = total;
-        console.log(total, "total");
     }
 
     if (event.target.innerText === "=") {
@@ -92,7 +88,6 @@ operands.addEventListener("click", function(event) {
     const operand = event.target.innerText;
     operation = selectOperation(operand);
     num1 = num2;
-    console.log(operation, num1);
 })
 
 backspace.addEventListener("click", function() {
