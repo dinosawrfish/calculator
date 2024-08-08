@@ -1,4 +1,6 @@
 let total = 0;
+let num1 = 0;
+let num2 = 0;
 let operation = null;
 
 const output = document.querySelector(".output");
@@ -6,8 +8,6 @@ const numbers = document.querySelector(".numbers");
 const operands = document.querySelector(".operands");
 const backspace = document.querySelector(".backspace");
 const clear = document.querySelector(".clear");
-
-// What does a calculator do
 
 function selectNumber(output, input) {
     let newNumber = "";
@@ -62,37 +62,44 @@ function removeRightDigit(number) {
 }
 // TODO: have operations be remembered and ran when equal is clicked
 
-while (operation !== null) {
-    total = operation(parseInt(total), parseInt(output.innerText));
-    operation = null;
-}
-
 // listeners
 numbers.addEventListener("click", function(event) {
     output.innerText = selectNumber(output.innerText, event.target.innerText);
+    num2 = output.innerText;
 });
 
 operands.addEventListener("click", function(event) {
 
     console.log(event.target.innerText);
+    if (operation !== null) {
+        total = operation(parseInt(num1), parseInt(num2));
+        num2 = total;
+        console.log(total, "total");
+    }
+
+    const operand = event.target.innerText;
+    operation = selectOperation(operand);
+    num1 = num2;
+    console.log(operation, num1);
+
     if (event.target.innerText === "=") {
         output.innerText = total;
     }
     else {
-        const operand = event.target.innerText;
-        operation = selectOperation(operand)
-
-        total = output.innerText;
         output.innerText = 0;
     }
 })
 
 backspace.addEventListener("click", function() {
     output.innerText = removeRightDigit(output.innerText);
+    num2 = output.innerText;
+    // do not allow backspace if the current operation is an equal
 })
 
 clear.addEventListener("click", function() {
     output.innerText = 0;
     total = 0;
+    num1 = 0;
+    num2 = 0;
     operation = null;
 })
