@@ -60,7 +60,7 @@ function removeRightDigit(number) {
         return 0;
     }
 }
-// TODO: current output needs to follow selected operand with selected number
+// TODO: have operations be remembered and ran when equal is clicked
 
 while (operation !== null) {
     total = operation(parseInt(total), parseInt(output.innerText));
