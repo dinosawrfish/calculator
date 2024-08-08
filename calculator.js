@@ -1,4 +1,8 @@
 let total = 0;
+let num1 = 0;
+let num2 = 0;
+
+let operation = null;
 
 const output = document.querySelector(".output");
 const numbers = document.querySelector(".numbers");
@@ -52,12 +56,24 @@ function selectOperation(operand) {
 // listeners
 numbers.addEventListener("click", function(event) {
     output.innerText = selectNumber(output.innerText, event.target.innerText);
+
+    if (operation !== null) {
+        answer = operation(parseInt(total), parseInt(output.innerText));
+        total = answer;
+    }
 });
 
 operands.addEventListener("click", function(event) {
-    console.log(event.target.innerText);
-    const operand = event.target.innerText;
-    const operation = selectOperation(operand)
 
-    const eval = operation(output.innerText, )
+    console.log(event.target.innerText);
+    if (event.target.innerText === "=") {
+        output.innerText = total;
+    }
+    else {
+        const operand = event.target.innerText;
+        operation = selectOperation(operand)
+
+        total = output.innerText;
+        output.innerText = 0;
+    }
 })
