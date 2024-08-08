@@ -1,7 +1,4 @@
 let total = 0;
-let num1 = 0;
-let num2 = 0;
-
 let operation = null;
 
 const output = document.querySelector(".output");
@@ -92,4 +89,10 @@ operands.addEventListener("click", function(event) {
 
 backspace.addEventListener("click", function() {
     output.innerText = removeRightDigit(output.innerText);
+})
+
+clear.addEventListener("click", function() {
+    output.innerText = 0;
+    total = 0;
+    operation = null;
 })
