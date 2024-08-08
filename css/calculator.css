@@ -71,6 +71,7 @@ button:active{
     grid-column-start: 1;
     grid-column-end: 4;
     border-bottom: 0;
+    border-left: 0;
 }
 
 .calculator {
