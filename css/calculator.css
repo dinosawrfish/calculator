@@ -30,6 +30,7 @@ button:active{
 
 .clear {
     grid-area: clear;
+    border-left: 0;
 }
 
 .backspace {
