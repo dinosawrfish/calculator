@@ -1,6 +1,6 @@
-let total = 0;
-let num1 = 0;
-let num2 = 0;
+let total = null;
+let num1 = null;
+let num2 = null;
 let operation = null;
 
 const output = document.querySelector(".output");
@@ -72,15 +72,15 @@ operands.addEventListener("click", function(event) {
 
     console.log(event.target.innerText);
     if (operation !== null) {
-        total = operation(parseInt(num1), parseInt(num2));
+        if (num1 === null) {
+            total = num2;
+        }
+        else {
+            total = operation(parseInt(num1), parseInt(num2));
+        }
         num2 = total;
         console.log(total, "total");
     }
-
-    const operand = event.target.innerText;
-    operation = selectOperation(operand);
-    num1 = num2;
-    console.log(operation, num1);
 
     if (event.target.innerText === "=") {
         output.innerText = total;
@@ -88,6 +88,11 @@ operands.addEventListener("click", function(event) {
     else {
         output.innerText = 0;
     }
+
+    const operand = event.target.innerText;
+    operation = selectOperation(operand);
+    num1 = num2;
+    console.log(operation, num1);
 })
 
 backspace.addEventListener("click", function() {
@@ -98,8 +103,5 @@ backspace.addEventListener("click", function() {
 
 clear.addEventListener("click", function() {
     output.innerText = 0;
-    total = 0;
-    num1 = 0;
-    num2 = 0;
-    operation = null;
+    total = num1 = num2 = operation = null;
 })
